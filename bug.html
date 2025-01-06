@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+
+  <script>
+    // Attempting to access a non-existent property of a NodeList
+    const divs = document.querySelectorAll('div');
+    console.log(divs.someProperty); //Error: Cannot read properties of undefined (reading 'someProperty')
+
+    //Correct way to access the first element's property
+    if (divs.length > 0){
+        console.log(divs[0].textContent);
+    }
+  </script>
+</body>
+</html>
