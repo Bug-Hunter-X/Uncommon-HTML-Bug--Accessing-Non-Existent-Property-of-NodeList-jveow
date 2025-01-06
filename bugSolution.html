@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+
+  <script>
+    const divs = document.querySelectorAll('div');
+
+    // Correct way to access and iterate
+    if (divs.length > 0) {
+      for (let i = 0; i < divs.length; i++) {
+        console.log(divs[i].textContent);
+      }
+    } else {
+      console.log('No divs found.');
+    }
+    
+    //Another correct way to access the first element's property
+    if (divs.length > 0){
+        console.log(divs[0].textContent);
+    }
+  </script>
+</body>
+</html>
